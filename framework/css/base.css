@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+page[name='a4']{
+    display: block;
+    width: 21cm;
+    height: 29.7cm;
+    background-color: white;
+
+    font-family: 'Gudea', sans-serif;
+
+    margin: 10px auto;
+    border: 1px solid black;
+    box-shadow: 0 0 5px 2px grey;
+}
+
+.bar{
+    width: 90%;
+    height: 2px;
+    margin: 0 auto;
+    background-color: grey;
+}
+
+[class*='flex']{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+ul.dyn-content{
+    margin: .3em 0 1em;
+    padding: .5em .8em;
+}
+
+/* ----------------------------------- TEXT ------------------------------ */
+.text-caps{
+    text-transform: uppercase;
+}
+
+.t-right{
+    text-align: right;
+}
+
+/* ----------------------------------- PARTS ------------------------------ */
+header{
+    height: 3cm;
+    padding: 1.5em 1em;
+    text-align: right;
+}
+
+header .title{
+    font-size: 1.5rem;
+}
+
+.bloc{
+    margin: .5em 0 1.5em;
+}
+
+.bloc h2{
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.5em;
+    color: #004;
+    color: #0049;
+}

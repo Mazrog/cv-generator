@@ -1,0 +1,39 @@
+{
+    "header": {
+        "first_name": "Maxime",
+        "last_name": "Cabanal-Duvillard",
+        "role": "Étudiant ingénieur",
+        "info": "Réseaux et Sécurité Informatique"
+    },
+    "sidebar": [],
+    "main_panel": {
+        "projets": [
+            {
+                "title": "Projet 2e année ISIMA",
+                "date": "60 - 2016/2017",
+                "desc": "Conception d'un scanneur de vulnérabilités WEB.",
+                "techno": [ "Javascript", "PhantomJS", "Python" ]
+            }
+        ],
+        "formation": [
+            {
+                "title": "ISIMA - Réseaux et Sécurité Informatique",
+                "date": "2015-2018",
+                "NB": "Institut Supérieur d'Informatique, de Modélisation et de leurs Applications",
+                "place": "Clermont-Ferrand"
+            },
+            {
+                "title": "MPSI/MP - Classe préparatoire aux grandes écoles",
+                "date": "2013-2015",
+                "NB": "Mathématiques - Physique",
+                "place": "Lycée Berthollet, Annecy"
+            },
+            {
+                "title": "Baccalauréat Scientifique",
+                "date": "2013",
+                "NB": "Mention Bien",
+                "place": "Lycée Paul Héroult, St Jean de Maurienne"
+            }
+        ]
+    }
+}

@@ -1,0 +1,12 @@
+.sidebar{
+    min-width: 6cm;
+    background-color: #ccc;
+    padding: .3em .5em;
+    border-radius: 0 35px;
+}
+
+.main-panel{
+    flex: 2 1 auto;
+    padding: .3em .5em;
+}
+

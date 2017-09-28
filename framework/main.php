@@ -18,15 +18,23 @@ class CV_Document{
     public $pages   = array();
     public $styles  = array();
 
+    private function layout_exists($layout){
+        /* Loading all the existing layouts */
+        /* Listing the directories under the /layout dir */
+        $layout_path = join(DIRECTORY_SEPARATOR, array(BASEPATH, 'layouts'));
+        $layout_list = array_diff(scandir($layout_path), array('.', '..'));
+        return in_array($layout, $layout_list);
+    }
+
     public function add_page($data_file, $layout = "plain"){
-        if(class_exists($layout)){
+        if($this->layout_exists($layout)){
             $data_tab = json_decode(file_get_contents($data_file), true);
-            $page = new $layout($data_tab);
+            $page = new Page($layout, $data_tab);
 
             array_push($this->pages, $page);
             array_push($this->styles, strtolower($layout));
 
-            // return $page;
+            return $page;
         } else {
             echo "This layout does not exist : ${layout}";
         }
@@ -77,15 +85,31 @@ class CV_Document{
     }
 }
 
-abstract class Page{
-    protected $layout  = "plain";
-    protected $data    = "";
+class Page{
+    public $layout   = "plain";
+    public $data     = "";
+    public $template = "plain.php";
 
-    protected function __construct($data){
-        $this->data = $data;
+    public function __construct($layout, $data){
+        $this->layout   = $layout;
+        $this->data     = $data;
+        $this->template = (strtolower($layout).".php");
+        echo "kappa";
     }
 
-    abstract protected function render();
+    public function render(){
+        $data = $this->data;
+        include join(
+            DIRECTORY_SEPARATOR,
+            array(
+                BASEPATH,
+                'layouts',
+                $this->layout,
+                $this->template
+            )
+            
+        );
+    }
 }
 
 ?>

@@ -33,13 +33,8 @@
         </div>
         <div class="main-panel">
             <div class="bloc">
-                <h2>Projets :</h2>
-            </div>
-            <div class="bloc">
                 <h2>Formation :</h2>
                 <?php
-                    
-
                     foreach($data['formation'] as $item){
                         ?>
                         <ul class="dyn-content">
@@ -53,9 +48,6 @@
                         <?php
                     }
                 ?>
-            </div>
-            <div class="bloc">
-                <h2>Activités et Intérêts :</h2>
             </div>
         </div>
     </div>

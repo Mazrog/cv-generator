@@ -12,7 +12,7 @@
                 "title": "Projet 2e année ISIMA",
                 "date": "60 - 2016/2017",
                 "desc": "Conception d'un scanneur de vulnérabilités WEB.",
-                "techno": [ "Javascript", "PhantomJS", "Python" ]
+                "technos": [ "Javascript", "PhantomJS", "Python" ]
             }
         ],
         "formation": [

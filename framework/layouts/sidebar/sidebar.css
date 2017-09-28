@@ -1,16 +1,48 @@
+.content{
+    height: 26.6cm;
+}
+
 .sidebar{
     min-width: 7cm;
+    height: 100%;
     background-color: #ccc;
-    padding: .5em 1em;
+    padding: .5em 0;
     border-radius: 0 35px;
 }
 
 .sidebar .bloc{
     text-align: center;
+    margin: 4em 0 .5em;
+}
+
+.sidebar .bloc ul li{
+    margin: 1em 0;
+}
+
+.sidebar .bloc table tr td{
+    padding: .3em 0;
 }
 
 .main-panel{
     flex: 2 1 auto;
-    padding: .5em 1em;
+    padding: .5em 0 .5em 1em;
 }
 
+.main-panel .bloc ul li{
+    margin: .5em 0 1em;
+}
+
+.NB{
+    font-style: italic;
+    margin-left: 2em;
+}
+
+.place{
+    text-align: right;
+    color: #00B8BE;
+}
+
+.technos{
+    text-align: right;
+    font-style: italic;
+}

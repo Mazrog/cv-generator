@@ -119,24 +119,28 @@ class Page{
             $this->layout   = $layout;
             $this->template = (strtolower($layout).".php");
         } else {
-            //if()
-            $this->layout   = 'utils';
-            $this->template = '404.html';
+            $path = join(
+                DIRECTORY_SEPARATOR,
+                array('custom', 'templates', $custom_template)
+            );
+            if(file_exists($path)){
+                $this->layout   = 'custom';
+                $this->template = $custom_template;
+            } else {
+                $this->layout   = 'utils';
+                $this->template = '404.html';
+            }
         }
     }
 
     public function render(){
         $data = $this->data;
-        include join(
-            DIRECTORY_SEPARATOR,
-            array(
-                BASEPATH,
-                'layouts',
-                $this->layout,
-                $this->template
-            )
-            
-        );
+        $arr_path = ($this->layout == 'custom')
+                    ? array('custom', 'templates', $this->template)
+                    : array(BASEPATH, 'layouts', $this->layout, $this->template);
+
+
+        include join(DIRECTORY_SEPARATOR, $arr_path);
     }
 }
 

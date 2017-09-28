@@ -8,6 +8,19 @@ ul{
     list-style: none;
 }
 
+/* I use the code tag for warning or error messages. */
+code{
+    display: block;
+    background-color: #ccc;
+    font-size: 1.3em;
+    color: purple;
+    padding: .3em;
+}
+
+h1{
+    margin: .5em 0 1em;
+}
+
 page[name='a4']{
     display: block;
     width: 21cm;
@@ -37,7 +50,7 @@ page[name='a4']{
     flex-direction: column;
 }
 
-ul.dyn-content{
+.bloc ul{
     margin: .3em 0 1em;
     padding: .5em .8em;
 }
@@ -45,6 +58,10 @@ ul.dyn-content{
 /* ----------------------------------- TEXT ------------------------------ */
 .text-caps{
     text-transform: uppercase;
+}
+
+.t-center{
+    text-align: center;
 }
 
 .t-right{
@@ -63,7 +80,7 @@ header .title{
 }
 
 .bloc{
-    margin: .5em 0 1.5em;
+    margin: .5em 0 1em;
 }
 
 .bloc h2{
@@ -71,4 +88,13 @@ header .title{
     font-size: 1.5em;
     color: #004;
     color: #0049;
+}
+
+.bloc ul li{
+    margin: .5em 0;
+}
+
+/* ----------------------------------- Classes ------------------------------ */
+.inline{
+    display: inline;
 }

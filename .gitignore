@@ -1,1 +1,3 @@
 data/*.json
+custom/css
+custom/templates

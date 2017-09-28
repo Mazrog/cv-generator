@@ -19,14 +19,17 @@
     <div class="content flex">
         <div class="sidebar">
             <?php
-                foreach($sidebar as $item){
+                foreach($sidebar as $sb_key => $sb_value){
             ?>
-            <div class="bloc">
-                <h2><?php echo $item['title'] ?></h2>
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
+                <div class="bloc">
+                    <h2><?php echo $sb_key; ?> :</h2>
+                    <ul>
+                        <li class="address"><?php echo $sb_value['address']; ?></li>
+                        <li><?php echo $sb_value['phone']; ?></li>
+                        <li><?php echo $sb_value['mail']; ?></li>
+                        
+                    </ul>
+                </div>
             <?php
                 }
             ?>
@@ -37,7 +40,7 @@
                 <?php
                     foreach($data['formation'] as $item){
                         ?>
-                        <ul class="dyn-content">
+                        <ul>
                             <li>
                                 <span class="date"><?php echo $item['date']; ?> : </span>
                                 <?php echo $item['title']; ?>

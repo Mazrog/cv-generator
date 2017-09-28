@@ -15,8 +15,9 @@ spl_autoload_register(function($class_name){
 
 
 class CV_Document{
-    public $pages   = array();
-    public $styles  = array();
+    public $pages           = array();
+    public $styles          = array();
+    public $custom_styles   = array();
 
     private function layout_exists($layout){
         /* Loading all the existing layouts */
@@ -26,10 +27,10 @@ class CV_Document{
         return in_array($layout, $layout_list);
     }
 
-    public function add_page($data_file, $layout = "plain"){
+    public function add_page($data_file, $layout = "plain", $custom_template = null){
         if($this->layout_exists($layout)){
             $data_tab = json_decode(file_get_contents($data_file), true);
-            $page = new Page($layout, $data_tab);
+            $page = new Page($layout, $data_tab, $custom_template);
 
             array_push($this->pages, $page);
             array_push($this->styles, strtolower($layout));
@@ -37,6 +38,21 @@ class CV_Document{
             return $page;
         } else {
             echo "This layout does not exist : ${layout}";
+        }
+    }
+
+    public function add_custom_stylesheet($stylesheet){
+        $path = join(
+            DIRECTORY_SEPARATOR,
+            array(
+                custom, 'css', $stylesheet
+            )
+        );
+        $c = preg_match('/^(.+).css$/', $stylesheet, $match);
+        if(c && file_exists($path)){
+            array_push($this->custom_styles, $path);
+        } else {
+            echo "<code class='t-center'>The stylesheet you entered is either not supported or does not exist :<br/>${path}</code>";
         }
     }
 
@@ -54,6 +70,12 @@ class CV_Document{
         /* Loading all the stylesheets */
         /* the base one and one for each layout */
         $styles_link = array("<link rel='stylesheet' href='framework/css/base.css'/>");
+        foreach($this->custom_styles as $sheet){
+            array_push(
+                $styles_link,
+                "<link rel='stylesheet' href='${sheet}'/>"
+            );
+        }
         foreach($this->styles as $layout){
             $path = join(
                 DIRECTORY_SEPARATOR,
@@ -90,11 +112,17 @@ class Page{
     public $data     = "";
     public $template = "plain.php";
 
-    public function __construct($layout, $data){
-        $this->layout   = $layout;
+    public function __construct($layout, $data, $custom_template = null){
         $this->data     = $data;
-        $this->template = (strtolower($layout).".php");
-        echo "kappa";
+
+        if(is_null($custom_template)){
+            $this->layout   = $layout;
+            $this->template = (strtolower($layout).".php");
+        } else {
+            //if()
+            $this->layout   = 'utils';
+            $this->template = '404.html';
+        }
     }
 
     public function render(){

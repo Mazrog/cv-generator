@@ -5,7 +5,48 @@
         "role": "Étudiant ingénieur",
         "info": "Réseaux et Sécurité Informatique"
     },
-    "sidebar": [],
+    "sidebar": {
+        "contact": {
+            "address": "133 Boulevard Lafayette,<br/>Appartement 228,<br/>63000 Clermont-Ferrand",
+            "phone": "06 42 17 61 42",
+            "mail": "maxime.cabanal@outlook.fr",
+            "links": [
+                {
+                    "title": "github",
+                    "href": "plop.fr"
+                },
+                {
+                    "title": "website",
+                    "href": "kappa.com"
+                }
+            ]
+        },
+        "compétences": {
+            "WEB": [
+                {
+                    "title": "HTML5 / CSS3"
+                },
+                {
+                    "title": "Javascript (Natif, AngularJS)"
+                },
+                {
+                    "title": "PHP"
+                },
+                {
+                    "title": "Apache / NodeJS"
+                }
+            ],
+            "divers": [ "shell", "git"],
+            "langages": [
+                {
+                    "title": "C / C++"
+                },
+                {
+                    "title": "Java"
+                }
+            ]
+        }
+    },
     "main_panel": {
         "projets": [
             {

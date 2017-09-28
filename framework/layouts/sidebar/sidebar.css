@@ -1,12 +1,16 @@
 .sidebar{
-    min-width: 6cm;
+    min-width: 7cm;
     background-color: #ccc;
-    padding: .3em .5em;
+    padding: .5em 1em;
     border-radius: 0 35px;
+}
+
+.sidebar .bloc{
+    text-align: center;
 }
 
 .main-panel{
     flex: 2 1 auto;
-    padding: .3em .5em;
+    padding: .5em 1em;
 }
 

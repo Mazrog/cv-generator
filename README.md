@@ -41,6 +41,9 @@ index.php
 The code inside **index.php** :
 ```
 <?php
+/* We need to include the file */
+require 'framework/main.php';
+
 /* We create a new document */
 $d = new CV_Document();
 

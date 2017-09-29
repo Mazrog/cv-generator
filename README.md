@@ -8,6 +8,15 @@ The templates are filled with information found in a json file in the *data* fol
 
 ---
 
+## Left todo
+
+- A bit of cleaning in the json fields for the *"block-list"* type
+- Writing the JSON documentation
+- Writing of the css media queries for the browser printing
+- Finishing the plain template
+
+---
+
 ## Predefined Templates
 
 ### Plain
@@ -20,7 +29,27 @@ A simple layout, with a header, a sidebar and a mainpanel.
 
 ---
 
-## Example code
+## Get started
+
+*(29/09/17) EDIT:* The *plain* template is not finished yet, so this example uses the *sidebar* one.
+
+**index.php**
+
+<?php
+/* We need to include the file */
+require_once 'framework/main.php';
+
+/* We create a new document */
+$d = new CV_Document();
+
+/* Adding a new page, driven by the recto.json file, with a 'sidebar' layout */
+$d->add_page('data/recto.json', 'sidebar');
+
+/* That's all ! Let's render it ! */
+$d->render();
+?>
+
+---
 
 With this structure folder
 

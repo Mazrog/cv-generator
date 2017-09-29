@@ -2,6 +2,8 @@
 
 define('BASEPATH', 'framework');
 
+/* This register is not used anymore */
+/* ----------------------------------- 
 spl_autoload_register(function($class_name){
     $class_name = strtolower($class_name);
     $parts = array(
@@ -12,6 +14,7 @@ spl_autoload_register(function($class_name){
     );
     include join(DIRECTORY_SEPARATOR, $parts);
 });
+----------------------------------- */
 
 
 class CV_Document{
@@ -69,7 +72,10 @@ class CV_Document{
         );
         /* Loading all the stylesheets */
         /* the base one and one for each layout */
-        $styles_link = array("<link rel='stylesheet' href='framework/css/base.css'/>");
+        $styles_link = array(
+            "<link rel='stylesheet' href='framework/css/base.css'/>",
+            "<link rel='stylesheet' href='framework/css/print.css' media='print'/>"
+        );
         foreach($this->custom_styles as $sheet){
             array_push(
                 $styles_link,

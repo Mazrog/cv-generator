@@ -1,3 +1,25 @@
+/* ----------------------------------- PARTS ------------------------------ */
+header{
+    height: 3cm;
+    padding: 1.5em 1em;
+    text-align: right;
+}
+
+header .title{
+    font-size: 1.5rem;
+}
+
+.bloc{
+    margin: 1em 0 .5em;
+}
+
+.bloc h2{
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.5em;
+    color: #004;
+    color: #0049;
+}
+
 .content{
     height: 26.6cm;
 }
@@ -12,15 +34,25 @@
 
 .sidebar .bloc{
     text-align: center;
-    margin: 4em 0 .5em;
 }
 
-.sidebar .bloc ul li{
-    margin: 1em 0;
+.sidebar .bloc ul{
+    margin: 0;
 }
 
 .sidebar .bloc table tr td{
     padding: .3em 0;
+}
+
+.bloc ul,
+.bloc table{
+    margin: .3em 0 1em;
+    padding: .5em .8em;
+}
+
+.bloc ul li,
+.bloc table tr{
+    margin: .5em 0;
 }
 
 .main-panel{
@@ -29,7 +61,7 @@
 }
 
 .main-panel .bloc ul li{
-    margin: .5em 0 1em;
+    margin: .5em 0;
 }
 
 .NB{
@@ -45,4 +77,8 @@
 .technos{
     text-align: right;
     font-style: italic;
+}
+
+.t-title::before{
+    content: "\2616";
 }

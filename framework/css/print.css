@@ -1,0 +1,9 @@
+/* This page needs to be written in order to "print" */
+/* (export as pdf) into the browser */
+
+page[name='a4']{
+    /* Clearing all the fancy stuff */
+    margin: 0;
+    border: none;
+    box-shadow: unset;
+}

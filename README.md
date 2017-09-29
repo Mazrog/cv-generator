@@ -33,8 +33,9 @@ A simple layout, with a header, a sidebar and a mainpanel.
 
 *(29/09/17) EDIT:* The *plain* template is not finished yet, so this example uses the *sidebar* one.
 
-**index.php**
+### First steps 101
 
+**index.php**
 ```
 <?php
 /* We need to include the file */
@@ -53,7 +54,9 @@ $d->render();
 
 ---
 
-With this structure folder
+### A more complex example, with custom templates and stylesheets
+
+With this folder structure :
 
 ```
 custom

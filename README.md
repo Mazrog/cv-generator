@@ -35,6 +35,7 @@ A simple layout, with a header, a sidebar and a mainpanel.
 
 **index.php**
 
+```
 <?php
 /* We need to include the file */
 require_once 'framework/main.php';
@@ -48,6 +49,7 @@ $d->add_page('data/recto.json', 'sidebar');
 /* That's all ! Let's render it ! */
 $d->render();
 ?>
+```
 
 ---
 

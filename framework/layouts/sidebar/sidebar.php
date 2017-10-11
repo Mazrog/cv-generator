@@ -9,23 +9,8 @@
 ?>
 
 <page name="a4">
-    <header class="flex-end">
-        <?php
-            foreach($header as $item){
-            ?>
-            <div class="bloc">
-            <?php
-                disp_item($item);
-            ?>
-            </div>
-            <?php
-            }
-        ?>
-    </header>
-    <div class="bar"></div>
-
     <div class="content flex">
-        <div class="sidebar flex-col-between">
+        <div class="sidebar flex-col">
             <?php
                 foreach($sidebar as $item){
                 ?>
@@ -40,6 +25,19 @@
             ?>
         </div>
         <div class="main-panel flex-col">
+            <header class="flex-end">
+                <?php
+                    foreach($header as $item){
+                    ?>
+                    <div class="bloc">
+                    <?php
+                        disp_item($item);
+                    ?>
+                    </div>
+                    <?php
+                    }
+                ?>
+            </header>
             <?php
                 foreach($main_panel as $item){
                 ?>

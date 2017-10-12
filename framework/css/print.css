@@ -1,6 +1,11 @@
 /* This page needs to be written in order to "print" */
 /* (export as pdf) into the browser */
 
+@page{
+    margin: 0;
+    padding: 0;
+}
+
 page[name='a4']{
     /* Clearing all the fancy stuff */
     margin: 0;

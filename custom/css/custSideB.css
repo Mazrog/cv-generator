@@ -1,0 +1,18 @@
+/* This is an example of some rules that you can redefine */
+/* Do not forget to include this stylesheet if you want to use it */
+/* by adding it in the "index.php" file (add_custom_stylesheet) */
+
+
+
+.sidebar{
+    background-color: #eee;
+}
+
+.t-title::before{
+    /* This is if you want to change the default bullets for the block list type */
+    content: UTF_CODE;
+}
+
+/* if you want, you can create a new class for your title and add a "::before" rule     */
+/* to add some bullets before your text                                                 */
+

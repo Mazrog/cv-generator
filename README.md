@@ -12,8 +12,12 @@ The templates are filled with information found in a json file in the *data* fol
 
 - A bit of cleaning in the json fields for the *"block-list"* type
 - Writing the JSON documentation
-- Writing of the css media queries for the browser printing
 - Finishing the plain template
+
+---
+## Getting the PDF
+To get the pdf document from the html page, just hit *CTRL+P*, or *Print*, and choose *Print to file*.
+Be sure to check the options to print the background colors and images in the options pane.
 
 ---
 

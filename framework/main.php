@@ -33,6 +33,9 @@ class CV_Document{
     public function add_page($data_file, $layout = "plain", $custom_template = null){
         if($this->layout_exists($layout) || $layout == "custom"){
             $data_tab = json_decode(file_get_contents($data_file), true);
+            if(is_null($data_tab)){
+                echo "<code class='t-center'>${data_file} cannot be parsed.</code>";
+            }
             $page = new Page($layout, $data_tab, $custom_template);
 
             array_push($this->pages, $page);
@@ -76,13 +79,9 @@ class CV_Document{
             "<link rel='stylesheet' href='framework/css/base.css'/>",
             "<link rel='stylesheet' href='framework/css/print.css' media='print'/>"
         );
-        foreach($this->custom_styles as $sheet){
-            array_push(
-                $styles_link,
-                "<link rel='stylesheet' href='${sheet}'/>"
-            );
-        }
-        foreach($this->styles as $layout){
+
+        $styles = array_unique($this->styles);
+        foreach($styles as $layout){
             $path = join(
                 DIRECTORY_SEPARATOR,
                 array(
@@ -94,6 +93,13 @@ class CV_Document{
                 "<link rel='stylesheet' href='${path}'/>"
             );
         }
+        foreach($this->custom_styles as $sheet){
+            array_push(
+                $styles_link,
+                "<link rel='stylesheet' href='${sheet}'/>"
+            );
+        }
+        /* Replacing the special style tag by the link tags */
         $base = preg_replace('/{{\s?styles\s?}}/', join('', $styles_link), $base);
         echo $base;
         /* Rendering each page in the body */

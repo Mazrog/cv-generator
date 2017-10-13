@@ -47,7 +47,7 @@ function disp_block_list($item){
             "</div>"
         );
 
-        if(isset($val['text'])){ array_push($tmp, "<div>${val['text']}</div>"); }
+        if(isset($val['text'])){ array_push($tmp, "<div class='text'>${val['text']}</div>"); }
         if(isset($val['NB'])){ array_push($tmp, "<div class='NB'>${val['NB']}</div>"); }
         if(isset($val['place'])){ array_push($tmp, "<div class='place'>${val['place']}</div>"); }
         if(isset($val['technos'])){

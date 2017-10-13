@@ -1,0 +1,123 @@
+{
+    "header": [
+        {
+            "type": "block-list",
+            "title": "",
+            "t-class": "title",
+            "d-class": "title",
+            "values": [
+                {
+                    "title": "title",
+                    "date": "date",
+                    "text": "text"
+                }
+            ]
+        }
+    ],
+    "sidebar": [
+        {
+            "type": "list",
+            "title": "list",
+            "values": [
+                {
+                    "title": "title 1",
+                    "desc": "-- desc 1 (optionnal) --"
+                },
+                {
+                    "title": "title 2"
+                }
+            ]
+        },
+        {
+            "type": "icon-list",
+            "title": "icon-list",
+            "b-class": "t-left",
+            "values": [
+                {
+                    "title": "title 1",
+                    "icon": {
+                        "type": "entity",
+                        "val": "&#9731;"
+                    }
+                },
+                {
+                    "title": "title 2",
+                    "icon": {
+                        "type": "fa",
+                        "val": "twitter"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "icon-link-list",
+            "title": "icon-link-list",
+            "values": [
+                {
+                    "title": "title 1",
+                    "icon": {
+                        "type": "img",
+                        "val": "img/github.png"
+                    },
+                    "href": "myLink"
+                },
+                {
+                    "title": "title 2",
+                    "icon": null,
+                    "href": "myLink"
+                }
+            ]
+        },
+        {
+            "type": "q-list",
+            "title": "q-list with star",
+            "q-options": {
+                "type": "star",
+                "lvl_max": "5"
+            },
+            "values": [
+                { "title": "title lvl 5", "lvl": 5 },
+                { "title": "title lvl 3", "lvl": 3 },
+                { "title": "title lvl 1", "lvl": 1 }
+            ]
+        },
+        {
+            "type": "q-list",
+            "title": "q-list with bar",
+            "q-options": {
+                "type": "bar",
+                "lvl_max": "10"
+            },
+            "values": [
+                { "title": "title lvl 5", "lvl": 8, "color": "#1278ab" },
+                { "title": "title lvl 3", "lvl": 3, "color": "purple" },
+                { "title": "title lvl 1", "lvl": 1, "color": "lightgreen" }
+            ]
+        }
+    ],
+    "main_panel": [
+        {
+            "type": "block-list",
+            "title": "block-list",
+            "t-class": "t-strong t-title",
+            "values": [
+                {
+                    "title": "title so beautiful",
+                    "date": "date",
+                    "text": "text - lorem ipsum ta maman, this is where you can blabla under the title of the thing",
+                    "NB": "NB - this is an italic text",
+                    "place": "place - where",
+                    "technos": [ "technos", "Plop", "Plouf" ]
+                },
+                {
+                    "title": "title so beautiful",
+                    "date": "date",
+                    "text": "text - lorem ipsum ta maman, this is where you can blabla under the title of the thing",
+                    "NB": "NB - this is an italic text",
+                    "place": "place - where",
+                    "technos": [ "technos", "Plop", "Plouf" ]
+                }
+            ]
+        }
+    ]
+}

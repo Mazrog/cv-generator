@@ -19,7 +19,8 @@ function make_chart($options, $val){
 }
 
 function disp_q_list($item){
-    echo "<table>";
+    $b_class = (isset($item['b-class'])) ? "class='${item['b-class']}'" : "";
+    echo "<table ${b_class}>";
     foreach($item['values'] as $val){
         $ct = "";
         echo "<tr>";
@@ -34,7 +35,8 @@ function disp_q_list($item){
 
 
 function disp_block_list($item){
-    echo "<ul>";
+    $b_class = (isset($item['b-class'])) ? "class='${item['b-class']}'" : "";
+    echo "<ul ${b_class}>";
     foreach($item['values'] as $val){
         echo "<li>";
         $tmp = array(
@@ -66,16 +68,29 @@ function disp_block_list($item){
 
 function disp_list($item){
     $type = explode("-", $item['type']);
-    echo "<ul>";
+    $b_class = (isset($item['b-class'])) ? "class='${item['b-class']}'" : "";
+    echo "<ul ${b_class}>";
     foreach($item['values'] as $val){
         $ct = "";
         echo "<li>";
         if(in_array('icon', $type)){
             $ct = "<div class='icon'>";
-            if(!is_null($val['icon'])){
-                $ct .= ("<img src='${val['icon']}'/>");
-            }
-            $ct .= "</div>";
+            $icon = $val['icon'];
+            if(!is_null($icon)){
+                switch($icon['type']){
+                    case 'img':
+                        $ct = "<img class='icon' src='${icon['val']}' />";
+                        break;
+                    case 'entity':
+                        $ct = "<span class='icon'>${icon['val']}</span>";
+                        break;
+                    case 'fa':
+                        $ct = "<span aria-hidden='true' class='icon fa fa-${icon['val']}'></span>";
+                        break;
+                    default:
+                        $ct .= "</div>";
+                }
+            } else { $ct .= "</div>"; }
         }
         if(in_array('link', $type)){
             $ct .= join('', array(

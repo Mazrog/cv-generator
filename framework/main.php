@@ -31,7 +31,7 @@ class CV_Document{
     }
 
     public function add_page($data_file, $layout = "plain", $custom_template = null){
-        if($this->layout_exists($layout)){
+        if($this->layout_exists($layout) || $layout == "custom"){
             $data_tab = json_decode(file_get_contents($data_file), true);
             $page = new Page($layout, $data_tab, $custom_template);
 
